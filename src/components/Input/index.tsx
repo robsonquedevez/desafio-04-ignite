@@ -1,15 +1,23 @@
-import {
+import React, {
   useEffect,
   useRef,
   useState,
   useCallback,
+  Component,  
 } from 'react';
+
+import { IconBaseProps } from 'react-icons'
+
+interface InputProps {
+  name: string;
+  icon?: Component<IconBaseProps>;
+}
 
 import { useField } from '@unform/core';
 
 import { Container } from './styles';
 
-const Input = ({ name, icon: Icon, ...rest }) => {
+const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -18,7 +26,7 @@ const Input = ({ name, icon: Icon, ...rest }) => {
   const { fieldName, defaultValue, registerField } = useField(name);
 
   const handleInputFocus = useCallback(() => {
-    setIsFocused(true);
+    return setIsFocused(true);
   }, []);
 
   const handleInputBlur = useCallback(() => {
@@ -37,7 +45,7 @@ const Input = ({ name, icon: Icon, ...rest }) => {
 
   return (
     <Container isFilled={isFilled} isFocused={isFocused}>
-      {Icon && <Icon size={20} />}
+      {/* {Icon && <Icon size={20} />} */}
 
       <input
         onFocus={handleInputFocus}
