@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiPlusSquare } from 'react-icons/fi';
 
 import { Container } from './styles';

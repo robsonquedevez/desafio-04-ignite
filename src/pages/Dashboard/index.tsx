@@ -47,7 +47,7 @@ export function Dashboard () {
     }
   }
 
-  async function handleUpdateFood(food: typeAddFood) {
+  async function handleUpdateFood(food: typeFood) {
     try {
       const foodUpdated = await api.put(
         `/foods/${editingFood.id}`,
@@ -115,5 +115,3 @@ export function Dashboard () {
     );
   // }
 };
-
-export default Dashboard;

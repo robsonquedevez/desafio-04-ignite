@@ -17,7 +17,7 @@ type typeFood = {
 interface FoodProps {
   food: typeFood;
   handleDelete: (id: number) => Promise<void>;
-  handleEditFood: (food: typeFood) => Promise<void>;
+  handleEditFood: (food: typeFood) => void;
 }
 
 export function Food({ food, handleDelete, handleEditFood }: FoodProps) {
